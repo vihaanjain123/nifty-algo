@@ -2,7 +2,7 @@
 # NIFTY 50 Trading Algorithm - Version 1
 # Author: Vihaan Jain
 # Started: June 15, 2026
-# Strategy: MA Crossover + RSI + Candlestick Patterns + Long/Short + ADX
+# Strategy: MA Crossover + RSI + Candlestick Patterns + Long/Short + ADX + Choppy Market Filter
 # Timeframe: Hourly
 # Status: Backtesting phase
 # ============================================
@@ -45,11 +45,14 @@ tr = pd.concat([
     (low - close.shift()).abs()
 ], axis=1).max(axis=1)
 
-atr = tr.rolling(14).mean()
-plus_di = 100 * (plus_dm.rolling(14).mean() / atr)
-minus_di = 100 * (minus_dm.rolling(14).mean() / atr)
+atr_series = tr.rolling(14).mean()
+plus_di = 100 * (plus_dm.rolling(14).mean() / atr_series)
+minus_di = 100 * (minus_dm.rolling(14).mean() / atr_series)
 dx = 100 * (plus_di - minus_di).abs() / (plus_di + minus_di)
 nifty["ADX"] = dx.rolling(14).mean()
+
+# ATR for choppy detection
+nifty["ATR10"] = tr.rolling(10).mean()
 
 # Split into train and test
 train = nifty["2025-06-01":"2025-12-31"]
@@ -74,7 +77,7 @@ def run_backtest(data, label):
     print(f"\n--- {label} RESULTS ---\n")
 
     for date, row in data.iterrows():
-        if any(str(row[col]) == "nan" for col in ["MA20", "MA100", "MA400", "RSI", "ADX"]):
+        if any(str(row[col]) == "nan" for col in ["MA20", "MA100", "MA400", "RSI", "ADX", "ATR10"]):
             continue
 
         close = round(float(row["Close"]), 2)
@@ -83,15 +86,15 @@ def run_backtest(data, label):
         ma400 = round(float(row["MA400"]), 2)
         rsi = round(float(row["RSI"]), 2)
         adx = round(float(row["ADX"]), 2)
+        atr10 = round(float(row["ATR10"]), 2)
 
         open_curr = float(row["Open"])
         high_curr = float(row["High"])
         low_curr = float(row["Low"])
         close_curr = float(row["Close"])
 
-        # Need previous 2 candles for multi-candle patterns
         idx = nifty.index.get_loc(date)
-        if idx < 2:
+        if idx < 10:
             continue
         prev_row = nifty.iloc[idx - 1]
         prev2_row = nifty.iloc[idx - 2]
@@ -104,7 +107,60 @@ def run_backtest(data, label):
         open_prev2 = float(prev2_row["Open"])
         close_prev2 = float(prev2_row["Close"])
 
-        # Candle measurements
+        # Last 10 candles for choppy detection
+        last10 = nifty.iloc[idx-10:idx]
+        last10_high = float(last10["High"].max())
+        last10_low = float(last10["Low"].min())
+        last10_close_start = float(last10["Close"].iloc[0])
+        last10_close_end = float(last10["Close"].iloc[-1])
+
+        # Count MA20 crosses in last 10 candles
+        ma20_crosses = 0
+        for i in range(1, len(last10)):
+            prev_close = float(last10["Close"].iloc[i-1])
+            curr_close = float(last10["Close"].iloc[i])
+            prev_ma20 = float(last10["MA20"].iloc[i-1])
+            curr_ma20 = float(last10["MA20"].iloc[i])
+            if (prev_close < prev_ma20 and curr_close > curr_ma20) or \
+               (prev_close > prev_ma20 and curr_close < curr_ma20):
+                ma20_crosses += 1
+
+        # ============================================
+        # CHOPPY MARKET DETECTOR - All 5 filters
+        # ============================================
+
+        # Filter 1: ADX must be strong enough
+        adx_strong = adx > 28
+
+        # Filter 2: MA separation must be significant
+        ma_separation = abs(ma20 - ma100) / ma100 * 100
+        ma_separated = ma_separation > 0.5
+
+        # Filter 3: Price not crossing MA20 too often
+        not_oscillating = ma20_crosses <= 3
+
+        # Filter 4: Net price movement must justify ATR
+        net_move = abs(last10_close_end - last10_close_start)
+        atr_justified = net_move > atr10 * 0.5
+
+        # Filter 5: Swing range must show directional movement
+        swing_range = last10_high - last10_low
+        swing_meaningful = swing_range > close * 0.01
+
+        # Filter 6: Trend reversal detection - don't short into a recovery
+        last20 = nifty.iloc[idx-20:idx]
+        last20_lows = last20["Low"].values
+        # Check if lows are trending upward (recovery signal)
+        early_low = float(last20_lows[:10].mean())
+        recent_low = float(last20_lows[10:].mean())
+        not_recovering = recent_low <= early_low * 1.005  # recent lows not more than 0.5% above early lows
+
+        # All 5 must pass
+        not_choppy = adx_strong and ma_separated and not_oscillating and atr_justified and swing_meaningful
+
+        # ============================================
+        # Candlestick patterns
+        # ============================================
         body = abs(close_curr - open_curr)
         lower_wick = min(close_curr, open_curr) - low_curr
         upper_wick = high_curr - max(close_curr, open_curr)
@@ -112,9 +168,6 @@ def run_backtest(data, label):
         body_prev = abs(close_prev - open_prev)
         body_prev2 = abs(close_prev2 - open_prev2)
 
-        # --- BULLISH PATTERNS ---
-
-        # Bullish Engulfing
         bullish_engulfing = (
             close_prev < open_prev and
             close_curr > open_curr and
@@ -122,45 +175,27 @@ def run_backtest(data, label):
             open_curr < close_prev
         )
 
-        # Hammer
         hammer = (
             body > 0 and
             lower_wick >= 2 * body and
             upper_wick <= 0.3 * body
         )
 
-        # Morning Star (3 candle pattern)
-        # Candle 1: big red, Candle 2: small body, Candle 3: big green closing above midpoint of Candle 1
         midpoint_prev2 = (open_prev2 + close_prev2) / 2
         morning_star = (
-            close_prev2 < open_prev2 and                    # candle 1 is red
-            body_prev < body_prev2 * 0.3 and               # candle 2 is small (indecision)
-            close_curr > open_curr and                      # candle 3 is green
-            close_curr > midpoint_prev2 and                 # candle 3 closes above midpoint of candle 1
-            body > body_prev2 * 0.5                        # candle 3 has decent body
+            close_prev2 < open_prev2 and
+            body_prev < body_prev2 * 0.3 and
+            close_curr > open_curr and
+            close_curr > midpoint_prev2 and
+            body > body_prev2 * 0.5
         )
 
-        # Tweezer Bottom (2 candle pattern)
-        # First red candle, second green candle, nearly equal lows
         tweezer_bottom = (
-            close_prev < open_prev and                      # previous candle red
-            close_curr > open_curr and                      # current candle green
-            abs(low_curr - low_prev) <= 0.001 * low_prev   # nearly equal lows (within 0.1%)
+            close_prev < open_prev and
+            close_curr > open_curr and
+            abs(low_curr - low_prev) <= 0.001 * low_prev
         )
 
-        # Combined bullish signal - any strong pattern
-        good_candle = (
-            bullish_engulfing or
-            hammer or
-            morning_star or
-            tweezer_bottom or
-            (close_curr > open_curr)                        # simple green candle as fallback
-        )
-        no_upper_wick_rejection = upper_wick <= 1.5 * body
-
-        # --- BEARISH PATTERNS ---
-
-        # Bearish Engulfing
         bearish_engulfing = (
             close_prev > open_prev and
             close_curr < open_curr and
@@ -168,38 +203,31 @@ def run_backtest(data, label):
             open_curr > close_prev
         )
 
-        # Shooting Star
         shooting_star = (
             body > 0 and
             upper_wick >= 2 * body and
             lower_wick <= 0.3 * body
         )
 
-        # Evening Star (opposite of Morning Star)
         midpoint_prev2_bear = (open_prev2 + close_prev2) / 2
         evening_star = (
-            close_prev2 > open_prev2 and                    # candle 1 is green
-            body_prev < body_prev2 * 0.3 and               # candle 2 is small
-            close_curr < open_curr and                      # candle 3 is red
-            close_curr < midpoint_prev2_bear and            # candle 3 closes below midpoint of candle 1
+            close_prev2 > open_prev2 and
+            body_prev < body_prev2 * 0.3 and
+            close_curr < open_curr and
+            close_curr < midpoint_prev2_bear and
             body > body_prev2 * 0.5
         )
 
-        # Tweezer Top (opposite of Tweezer Bottom)
         tweezer_top = (
             close_prev > open_prev and
             close_curr < open_curr and
             abs(high_curr - high_prev) <= 0.001 * high_prev
         )
 
-        bad_candle = (
-            bearish_engulfing or
-            shooting_star or
-            evening_star or
-            tweezer_top or
-            (close_curr < open_curr)
-        )
-        no_lower_wick_rejection = lower_wick <= 1.5 * body
+        good_candle = bullish_engulfing or hammer or morning_star or tweezer_bottom or (close_curr > open_curr)
+        bad_candle = bearish_engulfing or shooting_star or evening_star or tweezer_top or (close_curr < open_curr)
+        no_upper_wick_rejection = upper_wick <= 1.5 * body
+        no_lower_wick_rejection = lower_wick <= 1.5 * body if body > 0 else True
 
         # Signal conditions
         ma_signal = ma20 > ma100
@@ -212,13 +240,11 @@ def run_backtest(data, label):
         bad_rsi = 35 < rsi < 75
         price_below_ma20 = close < ma20
 
-        strong_trend = adx > 25
-
         if cooldown > 0:
             cooldown -= 1
 
         # LONG BUY
-        if ma_signal and uptrend and good_rsi and price_above_ma20 and good_candle and no_upper_wick_rejection and strong_trend and position == 0 and cooldown == 0:
+        if ma_signal and uptrend and good_rsi and price_above_ma20 and good_candle and no_upper_wick_rejection and not_choppy and position == 0 and cooldown == 0:
             position = capital / close
             buy_price = close
             capital = 0
@@ -229,7 +255,8 @@ def run_backtest(data, label):
             print(f"{date} | LONG BUY at {close} | Units: {round(position, 4)}")
 
         # SHORT ENTRY
-        elif ma_signal_short and downtrend and bad_rsi and price_below_ma20 and bad_candle and no_lower_wick_rejection and strong_trend and position == 0 and cooldown == 0:
+        # SHORT ENTRY
+        elif ma_signal_short and downtrend and bad_rsi and price_below_ma20 and bad_candle and no_lower_wick_rejection and not_choppy and not_recovering and position == 0 and cooldown == 0:
             position = -(capital / close)
             buy_price = close
             capital = 0
@@ -330,9 +357,13 @@ def run_backtest(data, label):
     ax.grid(True)
     ax.legend()
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"{label}_chart.png")
 
     return final_value
+    plt.tight_layout()
+    plt.savefig(f"{label}_chart.png")
+    plt.close()
+    print(f"Chart saved as {label}_chart.png")
 
 # Run training
 print("=" * 50)
