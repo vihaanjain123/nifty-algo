@@ -4,11 +4,50 @@
 # Purpose: Web app that shows live signals
 #          and sends email alerts
 # ============================================
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 from flask import Flask, render_template_string
 from signal_checker import get_signal
 from datetime import datetime
 
+# Email settings
+EMAIL_SENDER = "vihaannurmagomedov@gmail.com"
+EMAIL_PASSWORD = "tidq bxtg pzrk emby"
+EMAIL_RECEIVER = "vihujain2604@gmail.com"
+
+def send_email_alert(signal, price):
+    msg = MIMEMultipart()
+    msg["From"] = EMAIL_SENDER
+    msg["To"] = EMAIL_RECEIVER
+    msg["Subject"] = f"NIFTY Signal Alert: {signal}"
+
+    body = f"""
+    NIFTY 50 Signal Alert
+    
+    Signal: {signal}
+    Price: ₹{price}
+    Time: {datetime.now().strftime('%Y-%m-%d %H:%M IST')}
+    
+    Open your dashboard for full details:
+    http://127.0.0.1:5000
+    """
+
+    msg.attach(MIMEText(body, "plain"))
+
+    try:
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())
+        server.quit()
+        print(f"Email alert sent: {signal}")
+        return True
+    except Exception as e:
+        print(f"Email failed: {e}")
+        return False
+    
 app = Flask(__name__)
 
 # Store signal history
@@ -416,6 +455,11 @@ def get_full_data():
 @app.route("/")
 def dashboard():
     data = get_full_data()
+    
+    # Send email if signal is actionable
+    if True:
+        send_email_alert(data["signal"], data["price"])
+    
     signal_history.append({
         "time": datetime.now().strftime("%H:%M"),
         "price": data["price"],
