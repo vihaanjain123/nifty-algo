@@ -11,11 +11,12 @@ from email.mime.multipart import MIMEMultipart
 from flask import Flask, render_template_string
 from signal_checker import get_signal
 from datetime import datetime
+from apscheduler.schedulers.background import BackgroundScheduler
 
 # Email settings
 EMAIL_SENDER = "vihaannurmagomedov@gmail.com"
 EMAIL_PASSWORD = "tidq bxtg pzrk emby"
-EMAIL_RECEIVER = "vihujain2604@gmail.com"
+EMAIL_RECEIVER = "vihaanj2604@gmail.com"
 
 def send_email_alert(signal, price):
     msg = MIMEMultipart()
@@ -52,6 +53,8 @@ app = Flask(__name__)
 
 # Store signal history
 signal_history = []
+
+last_signal = "⚪ HOLD"  # track previous signal
 
 HTML_TEMPLATE = """
 <!DOCTYPE html>
@@ -454,11 +457,14 @@ def get_full_data():
 
 @app.route("/")
 def dashboard():
+    global last_signal
     data = get_full_data()
     
-    # Send email if signal is actionable
-    if True:
-        send_email_alert(data["signal"], data["price"])
+    # Only email if signal changed and is actionable
+    if data["signal"] != last_signal:
+        if "BUY" in data["signal"] or "SHORT" in data["signal"]:
+            send_email_alert(data["signal"], data["price"])
+        last_signal = data["signal"]
     
     signal_history.append({
         "time": datetime.now().strftime("%H:%M"),
@@ -467,12 +473,37 @@ def dashboard():
     })
     return render_template_string(HTML_TEMPLATE, history=list(reversed(signal_history)), **data)
 
+def scheduled_check():
+    global last_signal
+    print(f"\n[{datetime.now().strftime('%H:%M')}] Running scheduled signal check...")
+    data = get_full_data()
+    
+    print(f"Signal: {data['signal']} | Price: ₹{data['price']}")
+    
+    # Only email if signal changed and is actionable
+    if data["signal"] != last_signal:
+        if "BUY" in data["signal"] or "SHORT" in data["signal"]:
+            send_email_alert(data["signal"], data["price"])
+        last_signal = data["signal"]
+    
+    signal_history.append({
+        "time": datetime.now().strftime("%H:%M"),
+        "price": data["price"],
+        "signal": data["signal"]
+    })
+
 @app.route("/refresh")
 def refresh():
     from flask import redirect
     return redirect("/")
 
 if __name__ == "__main__":
+    # Start the scheduler
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(scheduled_check, "interval", minutes=1)
+    scheduler.start()
+    print("Scheduler started - checking signals every hour automatically")
+    
     print("Starting NIFTY Signal Dashboard...")
-    print("Open http://localhost:5000 in your browser")
+    print("Open http://127.0.0.1:5000 in your browser")
     app.run(debug=False, port=5000)
