@@ -1,0 +1,57 @@
+{
+  "capital": 0.0,
+  "position": null,
+  "trades": [
+    {
+      "type": "OPEN",
+      "direction": "SHORT",
+      "entry_price": 23286.1,
+      "units": 4.2944,
+      "timestamp": "2026-09-15 13:24"
+    },
+    {
+      "type": "CLOSE",
+      "direction": "SHORT",
+      "entry_price": 23286.1,
+      "exit_price": 23118.6,
+      "units": 4.2944,
+      "pnl": 719.31,
+      "capital_after": 719.31,
+      "timestamp": "2026-09-15 17:24"
+    },
+    {
+      "type": "OPEN",
+      "direction": "SHORT",
+      "entry_price": 22719.55,
+      "units": 0.0317,
+      "timestamp": "2026-09-30 13:53"
+    },
+    {
+      "type": "CLOSE",
+      "direction": "SHORT",
+      "entry_price": 22719.55,
+      "exit_price": 22648.85,
+      "units": 0.0317,
+      "pnl": 2.24,
+      "capital_after": 2.24,
+      "timestamp": "2026-09-30 14:53"
+    },
+    {
+      "type": "OPEN",
+      "direction": "SHORT",
+      "entry_price": 22537.3,
+      "units": 0.0001,
+      "timestamp": "2026-10-01 11:09"
+    },
+    {
+      "type": "CLOSE",
+      "direction": "SHORT",
+      "entry_price": 22537.3,
+      "exit_price": 22531.95,
+      "units": 0.0001,
+      "pnl": 0.0,
+      "capital_after": 0.0,
+      "timestamp": "2026-10-01 12:09"
+    }
+  ]
+}

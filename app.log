@@ -1097,3 +1097,2541 @@ Open http://127.0.0.1:5000 in your browser
 Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-06-24 10:17:19 IST)" was missed by 0:06:40.918165
 Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-06-24 19:17:19 IST)" was missed by 0:08:59.507828
 127.0.0.1 - - [24/Jun/2026 19:56:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2026 14:56:51] "[33mGET /portfolio HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Jun/2026 14:56:54] "[33mGET /portfolio HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Jun/2026 14:57:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2026 14:59:00] "[32mGET /refresh HTTP/1.1[0m" 302 -
+127.0.0.1 - - [25/Jun/2026 14:59:01] "GET / HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-06-25 15:17:19 IST)" was missed by 0:47:53.837252
+127.0.0.1 - - [25/Jun/2026 15:25:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Jun/2026 15:27:48] "[33mGET /stocks HTTP/1.1[0m" 404 -
+/Users/vihaanjain/nifty-algo/run_app.sh: line 4: 25680 Terminated: 15          python /Users/vihaanjain/personalproject/app.py >> /Users/vihaanjain/nifty-algo/app.log 2>&1
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.137:5000
+[33mPress CTRL+C to quit[0m
+/Users/vihaanjain/nifty-algo/run_app.sh: line 6: 32326 Terminated: 15          python /Users/vihaanjain/personalproject/app.py >> /Users/vihaanjain/nifty-algo/app.log 2>&1
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.137:5000
+[33mPress CTRL+C to quit[0m
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-09 19:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-09 20:22:35 IST)" was missed by 0:26:42.529534
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-09 21:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-09 22:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-09 23:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-10 00:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-11 03:22:35 IST)" was missed by 0:47:20.806790
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-11 14:22:35 IST)" was missed by 0:50:45.786409
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-11 16:22:35 IST)" was missed by 0:02:21.578276
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-11 19:22:35 IST)" was missed by 0:05:29.027231
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-11 22:22:35 IST)" was missed by 0:06:02.716064
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-12 02:22:35 IST)" was missed by 0:50:46.876814
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-12 03:22:35 IST)" was missed by 0:08:04.527211
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-12 15:22:35 IST)" was missed by 0:04:30.544921
+127.0.0.1 - - [12/Jul/2026 17:11:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Jul/2026 17:11:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-12 21:22:35 IST)" was missed by 0:21:09.682923
+127.0.0.1 - - [12/Jul/2026 23:00:40] "GET / HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 00:22:35 IST)" was missed by 0:10:23.330652
+127.0.0.1 - - [13/Jul/2026 00:00:42] "GET / HTTP/1.1" 200 -
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+[2026-07-13 01:53:43,266] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 553, in dashboard
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+127.0.0.1 - - [13/Jul/2026 01:53:43] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 02:22:35 IST)" was missed by 0:52:59.838821
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 03:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 04:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 17:22:35 IST)" was missed by 0:33:12.400264
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-13 23:22:35 IST)" was missed by 0:17:00.173130
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-14 01:22:35 IST)" was missed by 0:59:32.213104
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-14 04:22:35 IST)" was missed by 0:17:06.594276
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-14 18:22:35 IST)" was missed by 0:16:52.679039
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-14 20:22:35 IST)" was missed by 0:40:03.795604
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-14 22:22:35 IST)" was missed by 0:14:27.750806
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 01:22:35 IST)" was missed by 0:39:09.373902
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 14:22:35 IST)" was missed by 0:25:09.376343
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 15:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 16:22:35 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 18:22:35 IST)" was missed by 0:28:13.401847
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-15 21:22:35 IST)" was missed by 0:22:29.268963
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-16 10:22:35 IST)" was missed by 0:26:03.788166
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-16 17:22:35 IST)" was missed by 0:34:01.488946
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-17 13:22:35 IST)" was missed by 0:10:09.124569
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-17 19:22:35 IST)" was missed by 0:20:32.463152
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-17 22:22:35 IST)" was missed by 0:05:26.943713
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-17 23:07:37 IST)" was missed by 0:43:13.368888
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-18 22:07:37 IST)" was missed by 0:56:39.862433
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-18 23:07:37 IST)" was missed by 0:15:40.620678
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-19 12:07:37 IST)" was missed by 0:30:44.232409
+127.0.0.1 - - [19/Jul/2026 12:49:11] "GET / HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-19 18:07:37 IST)" was missed by 0:22:10.020478
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-19 19:07:37 IST)" was missed by 0:09:15.840711
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-19 22:07:37 IST)" was missed by 0:19:54.671419
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-20 00:07:37 IST)" was missed by 0:55:59.407416
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-20 18:07:37 IST)" was missed by 0:30:27.448130
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-20 19:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-20 22:07:37 IST)" was missed by 0:17:28.661289
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 10:07:37 IST)" was missed by 0:04:05.691769
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 12:07:37 IST)" was missed by 0:51:48.617782
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 13:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 14:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 18:07:37 IST)" was missed by 0:44:29.115440
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 20:07:37 IST)" was missed by 0:00:48.764518
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 21:07:37 IST)" was missed by 0:18:47.062106
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 22:07:37 IST)" was missed by 0:37:16.865542
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-21 23:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-22 00:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-22 12:07:37 IST)" was missed by 0:07:45.137550
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-22 19:07:37 IST)" was missed by 0:26:04.757980
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-22 22:07:37 IST)" was missed by 0:39:46.882105
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-23 10:07:37 IST)" was missed by 0:22:10.928100
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-23 18:07:37 IST)" was missed by 0:47:23.958183
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-23 19:07:37 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-23 20:07:37 IST)" was missed by 0:12:52.293022
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-23 23:07:37 IST)" was missed by 0:54:31.522097
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-24 01:07:37 IST)" was missed by 0:02:11.033265
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-24 19:07:37 IST)" was missed by 0:39:50.153463
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-24 23:07:37 IST)" was missed by 0:47:10.851618
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-25 01:07:37 IST)" was missed by 0:36:42.797846
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-25 13:07:37 IST)" was missed by 0:38:15.625159
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-25 15:07:37 IST)" was missed by 0:49:50.111131
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-26 10:07:37 IST)" was missed by 0:59:48.063570
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-27 11:07:37 IST)" was missed by 0:15:59.298800
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-27 12:07:37 IST)" was missed by 0:03:07.783420
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-27 13:07:37 IST)" was missed by 0:00:31.513516
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-27 15:07:37 IST)" was missed by 0:09:26.834151
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-28 11:07:37 IST)" was missed by 0:12:27.597891
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-28 22:07:37 IST)" was missed by 0:45:36.263725
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 00:07:37 IST)" was missed by 0:00:12.585597
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 06:07:37 IST)" was missed by 0:01:31.174094
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 13:07:37 IST)" was missed by 0:28:17.570866
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 19:07:37 IST)" was missed by 0:30:11.255236
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 21:07:37 IST)" was missed by 0:22:33.296142
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-29 23:07:37 IST)" was missed by 0:40:10.178811
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-30 02:07:37 IST)" was missed by 0:55:26.028262
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-30 07:07:37 IST)" was missed by 0:44:49.213848
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-30 16:07:37 IST)" was missed by 0:12:07.041522
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-07-30 19:07:37 IST)" was missed by 0:09:38.386021
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-01 05:07:37 IST)" was missed by 0:45:42.171303
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-01 15:07:37 IST)" was missed by 0:34:51.519744
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-02 10:07:37 IST)" was missed by 0:19:12.881761
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-02 21:07:37 IST)" was missed by 0:40:11.300372
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-02 22:07:37 IST)" was missed by 0:15:30.917586
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 09:07:37 IST)" was missed by 0:32:31.834285
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 10:07:37 IST)" was missed by 0:22:42.696041
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 14:07:37 IST)" was missed by 0:57:05.931111
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 15:07:37 IST)" was missed by 0:52:33.727065
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 17:07:37 IST)" was missed by 0:14:15.215956
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 18:07:37 IST)" was missed by 0:39:38.920827
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-03 21:07:37 IST)" was missed by 0:28:25.691512
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-04 10:07:37 IST)" was missed by 0:04:03.112886
+127.0.0.1 - - [04/Aug/2026 09:26:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Aug/2026 09:26:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Aug/2026 09:26:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-04 17:07:37 IST)" was missed by 0:32:39.246388
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-04 18:07:37 IST)" was missed by 0:12:24.442609
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-04 20:07:37 IST)" was missed by 0:07:11.041236
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-04 22:07:37 IST)" was missed by 0:53:14.256120
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 09:07:37 IST)" was missed by 0:49:01.092411
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 12:07:37 IST)" was missed by 0:50:06.900255
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 13:07:37 IST)" was missed by 0:03:07.532830
+127.0.0.1 - - [05/Aug/2026 14:04:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:05:40] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:07:48] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:09:19] "GET / HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:01] "GET / HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+
+[23:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[00:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[01:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[02:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[12:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[13:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[14:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[15:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[16:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[00:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[01:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[02:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[03:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24343.65
+
+[18:07] Running scheduled signal check...
+
+[19:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24239.5
+
+[20:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24239.5
+
+[12:07] Running scheduled signal check...
+
+[13:07] Running scheduled signal check...
+
+[14:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24178.55
+
+[18:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24193.95
+
+[22:07] Running scheduled signal check...
+
+[23:07] Running scheduled signal check...
+
+[19:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23991.05
+
+[20:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23991.05
+
+[10:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23955.25
+
+[18:07] Running scheduled signal check...
+
+[23:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23872.2
+
+[01:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23872.2
+
+[02:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23872.2
+
+[03:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23872.2
+
+[04:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23872.2
+
+[19:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[23:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[01:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[15:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[16:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[10:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23787.0
+
+[22:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23983.95
+
+[13:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24248.95
+
+[23:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24242.0
+
+[19:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24296.6
+
+[20:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24296.6
+
+[21:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24296.6
+
+[22:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24296.6
+
+[18:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24614.9
+
+[22:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24614.9
+
+[23:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24614.9
+
+[00:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24614.9
+
+[09:07] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹24614.9
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:05
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹1842.8 | PE: 88.94 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2721.69 (47.69%) | 6M: ₹4019.75 (118.13%)
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹498.5 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹546.92 (9.71%) | 6M: ₹600.04 (20.37%)
+Scanning NRB Bearings...
+  Chart generated: True
+  Price: ₹452.05 | PE: 30.92 | ROE: 15.17% | Signal: 🟢 BUY
+  3M: ₹663.75 (46.83%) | 6M: ₹974.6 (115.6%)
+Scanning ICICI Bank...
+  Chart generated: True
+  Price: ₹1437.4 | PE: 18.64 | ROE: 16.07% | Signal: ⚪ HOLD
+  3M: ₹1655.17 (15.15%) | 6M: ₹1905.92 (32.59%)
+Scanning APL Apollo...
+  Chart generated: True
+  Price: ₹1955.2 | PE: 45.66 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹1974.91 (1.01%) | 6M: ₹1994.81 (2.03%)
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:07
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹1843.0 | PE: 88.95 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2722.28 (47.71%) | 6M: ₹4021.06 (118.18%)
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹498.45 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹546.81 (9.7%) | 6M: ₹599.86 (20.35%)
+Scanning NRB Bearings...
+  Chart generated: True
+  Price: ₹453.45 | PE: 31.02 | ROE: 15.17% | Signal: 🟢 BUY
+  3M: ₹668.0 (47.32%) | 6M: ₹984.07 (117.02%)
+Scanning ICICI Bank...
+  Chart generated: True
+  Price: ₹1438.1 | PE: 18.65 | ROE: 16.07% | Signal: ⚪ HOLD
+  3M: ₹1656.78 (15.21%) | 6M: ₹1908.71 (32.72%)
+Scanning APL Apollo...
+  Chart generated: True
+  Price: ₹1954.0 | PE: 45.64 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹1972.44 (0.94%) | 6M: ₹1991.06 (1.9%)
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:09
+============================================================
+Scanning Laurus Labs...
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:09
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹1843.0 | PE: 88.95 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2722.28 (47.71%) | 6M: ₹4021.06 (118.18%)
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹1843.0 | PE: 88.95 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2722.28 (47.71%) | 6M: ₹4021.06 (118.18%)
+Scanning Tilaknagar Industries...
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:09
+============================================================
+Scanning Laurus Labs...
+Error fetching TI.NS: argument of type 'NoneType' is not iterable
+  Failed to fetch data
+Scanning NRB Bearings...
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:10
+============================================================
+Scanning Laurus Labs...
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:10
+============================================================
+Scanning Laurus Labs...
+
+============================================================
+STOCK SCANNER - 2026-08-05 14:10
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹498.55 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹547.03 (9.72%) | 6M: ₹600.23 (20.4%)
+Scanning NRB Bearings...
+  Chart generated: True
+  Price: ₹455.0 | PE: 31.12 | ROE: 15.17% | Signal: 🟢 BUY
+  3M: ₹672.73 (47.85%) | 6M: ₹994.65 (118.6%)
+Scanning ICICI Bank...
+  Chart generated: True
+  Price: ₹1843.0 | PE: 88.95 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2722.28 (47.71%) | 6M: ₹4021.06 (118.18%)
+Scanning Tilaknagar Industries...
+Error fetching LAURUSLABS.NS: argument of type 'NoneType' is not iterable
+  Failed to fetch data
+Scanning Tilaknagar Industries...
+Error fetching LAURUSLABS.NS: argument of type 'NoneType' is not iterable
+  Failed to fetch data
+Scanning Tilaknagar Industries...
+Error fetching LAURUSLABS.NS: argument of type 'NoneType' is not iterable
+  Failed to fetch data
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹498.55 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹547.03 (9.72%) | 6M: ₹600.23 (20.4%)127.0.0.1 - - [05/Aug/2026 14:10:15] "GET / HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:20] "GET /stocks HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:28] "GET /stocks HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:33] "GET /stocks HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:33] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:10:33] "GET /stocks HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:39] "GET /stocks HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [05/Aug/2026 14:10:52] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:10:52] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:11:17] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [05/Aug/2026 14:11:26] "GET / HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 15:07:37 IST)" was missed by 0:20:33.123243
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 18:07:37 IST)" was missed by 0:11:23.314637
+127.0.0.1 - - [05/Aug/2026 17:22:51] "GET / HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 20:07:37 IST)" was missed by 0:29:02.469535
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-05 23:07:37 IST)" was missed by 0:32:28.080691
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-06 11:07:37 IST)" was missed by 0:00:54.928745
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-06 12:07:37 IST)" was missed by 0:11:23.504515
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-06 19:07:37 IST)" was missed by 0:12:37.420255
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-06 20:07:37 IST)" was missed by 0:05:09.556904
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-07 09:07:37 IST)" was missed by 0:21:02.147023
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-07 14:07:37 IST)" was missed by 0:35:06.050622
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-07 16:07:37 IST)" was missed by 0:16:44.587041
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-07 20:07:37 IST)" was missed by 0:13:43.635330
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-07 23:07:37 IST)" was missed by 0:00:38.736601
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-08 23:07:37 IST)" was missed by 0:35:12.446364
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-09 01:07:37 IST)" was missed by 0:57:43.139227
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-09 02:07:37 IST)" was missed by 0:43:18.294745
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-09 10:07:37 IST)" was missed by 0:43:37.734914
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-09 18:07:37 IST)" was missed by 0:07:29.472796
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-09 23:07:37 IST)" was missed by 0:57:04.062957
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 02:07:37 IST)" was missed by 0:00:47.149936
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 05:07:37 IST)" was missed by 0:47:09.903461
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 08:07:37 IST)" was missed by 0:42:38.065375
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 09:07:37 IST)" was missed by 0:14:30.498347
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.29.8:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 11:50:00 IST)" was missed by 0:28:19.958663
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 14:50:00 IST)" was missed by 0:47:22.740997
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 18:50:00 IST)" was missed by 0:46:28.768802
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-10 23:50:00 IST)" was missed by 0:01:08.399570
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 08:50:00 IST)" was missed by 0:51:34.526209
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 10:50:00 IST)" was missed by 0:12:14.918029
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 12:50:00 IST)" was missed by 0:21:29.838225
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 15:50:00 IST)" was missed by 0:54:50.783242
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 16:50:00 IST)" was missed by 0:51:40.484984
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 17:50:00 IST)" was missed by 0:11:21.937812
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 18:50:00 IST)" was missed by 0:01:55.576987
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-11 22:50:00 IST)" was missed by 0:10:23.748910
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 09:50:00 IST)" was missed by 0:07:41.826135
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 10:50:00 IST)" was missed by 0:25:14.620559
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 11:50:00 IST)" was missed by 0:08:27.149924
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 12:50:00 IST)" was missed by 0:21:17.495531
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 16:50:00 IST)" was missed by 0:07:35.436621
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-12 19:50:00 IST)" was missed by 0:13:28.409335
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-13 10:50:00 IST)" was missed by 0:03:39.119890
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-13 17:50:00 IST)" was missed by 0:46:59.772223
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-13 22:50:00 IST)" was missed by 0:09:34.318554
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-14 09:50:00 IST)" was missed by 0:07:23.096169
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-14 10:50:00 IST)" was missed by 0:06:09.634664
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-14 14:50:00 IST)" was missed by 0:29:52.125363
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-14 15:50:00 IST)" was missed by 0:10:08.316695
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-15 09:50:00 IST)" was missed by 0:25:37.880813
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-15 11:50:00 IST)" was missed by 0:04:13.582002
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-16 12:50:00 IST)" was missed by 0:17:00.853670
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-16 16:50:00 IST)" was missed by 0:51:59.438725
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-16 20:50:00 IST)" was missed by 0:09:58.721791
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-17 08:50:00 IST)" was missed by 0:28:12.599645
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-17 11:50:00 IST)" was missed by 0:32:50.491967
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-17 14:50:00 IST)" was missed by 0:03:04.499752
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-17 20:50:00 IST)" was missed by 0:26:11.639154
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-17 21:50:00 IST)" was missed by 0:25:10.506717
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-18 09:50:00 IST)" was missed by 0:13:11.313631
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-18 15:50:00 IST)" was missed by 0:12:34.222458
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-18 17:50:00 IST)" was missed by 0:22:33.697125
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-18 20:50:00 IST)" was missed by 0:18:19.733408
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-18 21:50:00 IST)" was missed by 0:48:54.598808
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-19 09:50:00 IST)" was missed by 0:10:34.334885
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-19 11:50:00 IST)" was missed by 0:46:18.542293
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-19 13:50:00 IST)" was missed by 0:03:16.771745
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-19 15:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-19 19:33:29 IST)" was missed by 0:37:21.378306
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-20 00:33:29 IST)" was missed by 0:26:02.531660
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-20 08:33:29 IST)" was missed by 0:52:52.286745
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-20 10:33:29 IST)" was missed by 0:21:46.422522
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-20 17:33:29 IST)" was missed by 0:51:00.645479
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-20 22:33:29 IST)" was missed by 0:19:21.968282
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 08:33:29 IST)" was missed by 0:35:03.916373
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 10:33:29 IST)" was missed by 0:20:51.419952
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 11:33:29 IST)" was missed by 0:05:40.171902
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 14:33:29 IST)" was missed by 0:01:47.865614
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 17:33:29 IST)" was missed by 0:05:08.267971
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 18:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 19:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 20:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 21:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-21 22:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 10:33:29 IST)" was missed by 0:04:30.314113
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 11:33:29 IST)" was missed by 0:20:06.930277
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 14:33:29 IST)" was missed by 0:07:59.726975
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 16:33:29 IST)" was missed by 0:51:12.199285
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 18:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 19:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 20:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-22 21:33:29 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-23 12:33:29 IST)" was missed by 0:27:51.708806
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-23 16:33:29 IST)" was missed by 0:48:04.444246
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-23 21:33:29 IST)" was missed by 0:24:26.295215
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 09:33:29 IST)" was missed by 0:45:46.921349
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 10:33:29 IST)" was missed by 0:17:53.158647
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.23.46:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 11:41:12 IST)" was missed by 0:38:10.010734
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 13:41:12 IST)" was missed by 0:01:45.387778
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 17:41:12 IST)" was missed by 0:51:14.732125
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-24 22:41:12 IST)" was missed by 0:57:38.402402
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 06:41:12 IST)" was missed by 0:14:57.035830
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 09:41:12 IST)" was missed by 0:26:06.972188
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 10:41:12 IST)" was missed by 0:38:33.676843
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 11:41:12 IST)" was missed by 0:09:12.717015
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 12:41:12 IST)" was missed by 0:53:56.205036
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-25 22:41:12 IST)" was missed by 0:14:46.922661
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 06:41:12 IST)" was missed by 0:04:48.650138
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 09:41:12 IST)" was missed by 0:25:58.595421
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 10:41:12 IST)" was missed by 0:02:47.762122
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 12:41:12 IST)" was missed by 0:00:35.018401
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 13:41:12 IST)" was missed by 0:06:02.542991
+127.0.0.1 - - [26/Aug/2026 12:49:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [26/Aug/2026 12:49:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 14:41:12 IST)" was missed by 0:27:51.322894
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+[2026-08-26 14:55:36,572] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 553, in dashboard
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+127.0.0.1 - - [26/Aug/2026 14:55:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-26 17:41:12 IST)" was missed by 0:27:53.268081
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 00:41:12 IST)" was missed by 0:49:22.784058
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 07:41:12 IST)" was missed by 0:33:36.668029
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 09:41:12 IST)" was missed by 0:43:43.111671
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 10:41:12 IST)" was missed by 0:50:37.024795
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 12:41:12 IST)" was missed by 0:41:38.312435
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 18:41:12 IST)" was missed by 0:09:53.361853
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-27 21:41:12 IST)" was missed by 0:37:54.968663
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 08:41:12 IST)" was missed by 0:48:00.513887
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 09:41:12 IST)" was missed by 0:06:14.922937
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 12:41:12 IST)" was missed by 0:34:42.995855
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 14:41:12 IST)" was missed by 0:04:51.262826
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 20:41:12 IST)" was missed by 0:43:39.695241
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-28 21:41:12 IST)" was missed by 0:27:38.865319
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-29 10:41:12 IST)" was missed by 0:12:11.371249
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-29 13:41:12 IST)" was missed by 0:25:00.041155
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-29 18:41:12 IST)" was missed by 0:01:44.419150
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-29 18:41:12 IST)" was missed by 0:44:58.567428
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-30 16:41:12 IST)" was missed by 0:13:05.258928
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-30 18:41:12 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.219:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-30 21:48:53 IST)" was missed by 0:58:59.680928
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-31 12:48:53 IST)" was missed by 0:41:23.638047
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-08-31 16:48:53 IST)" was missed by 0:38:49.906031
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-01 10:48:53 IST)" was missed by 0:42:11.822670
+172.16.11.2 - - [01/Sep/2026 15:08:08] "GET / HTTP/1.1" 200 -
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-01 16:48:53 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-01 17:48:53 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-01 19:48:53 IST)" was missed by 0:32:45.243024
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-01 21:48:53 IST)" was missed by 0:01:53.191823
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 00:48:53 IST)" was missed by 0:13:54.067903
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 08:48:53 IST)" was missed by 0:40:14.938827
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 10:48:53 IST)" was missed by 0:43:02.945940
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 12:48:53 IST)" was missed by 0:20:48.949776
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 13:48:53 IST)" was missed by 0:42:30.756258
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 14:48:53 IST)" was missed by 0:00:51.283091
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 15:48:53 IST)" was missed by 0:36:52.932953
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 17:48:53 IST)" was missed by 0:21:35.740212
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 20:48:53 IST)" was missed by 0:23:28.291411
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-02 23:48:53 IST)" was missed by 0:11:02.831629
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 10:48:53 IST)" was missed by 0:06:47.155597
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 11:48:53 IST)" was missed by 0:05:16.462059
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 13:48:53 IST)" was missed by 0:08:27.433918
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 14:48:53 IST)" was missed by 0:51:33.034898
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 16:48:53 IST)" was missed by 0:00:04.831498
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 18:48:53 IST)" was missed by 0:18:22.377032
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-03 19:48:53 IST)" was missed by 0:00:49.893510
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 08:48:53 IST)" was missed by 0:29:47.099195
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 13:48:53 IST)" was missed by 0:40:21.216647
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 14:48:53 IST)" was missed by 0:00:12.173326
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 14:48:53 IST)" was missed by 0:14:40.275180
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 16:48:53 IST)" was missed by 0:30:14.829771
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 17:48:53 IST)" was missed by 0:37:29.386252
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 20:48:53 IST)" was missed by 0:39:43.471094
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 21:48:53 IST)" was missed by 0:36:57.360379
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-04 22:48:53 IST)" was missed by 0:14:31.957869
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 11:48:53 IST)" was missed by 0:40:33.175895
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 12:48:53 IST)" was missed by 0:12:28.619215
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 15:48:53 IST)" was missed by 0:25:56.016693
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 17:48:53 IST)" was missed by 0:20:29.225957
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 19:48:53 IST)" was missed by 0:34:06.616937
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-05 21:48:53 IST)" was missed by 0:52:26.582392
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-06 17:48:53 IST)" was missed by 0:11:23.590705
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-06 20:48:53 IST)" was missed by 0:22:03.350165
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 08:48:53 IST)" was missed by 0:15:31.823750
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 09:48:53 IST)" was missed by 0:01:48.862477
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 10:48:53 IST)" was missed by 0:19:46.936784
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 11:48:53 IST)" was missed by 0:36:17.690891
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 13:48:53 IST)" was missed by 0:54:53.680576
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 14:48:53 IST)" was missed by 0:11:43.310788
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 15:48:53 IST)" was missed by 0:43:55.691119
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 17:48:53 IST)" was missed by 0:00:03.807579
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 18:48:53 IST)" was missed by 0:09:01.842635
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 19:48:53 IST)" was missed by 0:32:34.171012
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-07 22:48:53 IST)" was missed by 0:05:56.513435
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 00:48:53 IST)" was missed by 0:01:31.378032
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 08:48:53 IST)" was missed by 0:35:26.080197
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 09:48:53 IST)" was missed by 0:03:20.898213
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 10:48:53 IST)" was missed by 0:50:19.197577
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 12:48:53 IST)" was missed by 0:22:28.156496
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 14:48:53 IST)" was missed by 0:16:29.569131
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 17:48:53 IST)" was missed by 0:05:19.573586
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 18:48:53 IST)" was missed by 0:04:18.390844
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 20:48:53 IST)" was missed by 0:59:44.697426
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-08 22:48:53 IST)" was missed by 0:13:09.692154
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-09 03:48:53 IST)" was missed by 0:20:07.574776
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-09 05:48:53 IST)" was missed by 0:01:59.945982
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-09 07:48:53 IST)" was missed by 0:51:37.640932
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-09 08:48:53 IST)" was missed by 0:34:54.541932
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-09 14:48:53 IST)" was missed by 0:04:36.246415
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.227:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-10 06:06:57 IST)" was missed by 0:22:02.480805
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-10 09:06:57 IST)" was missed by 0:15:48.543925
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-10 12:06:57 IST)" was missed by 0:30:02.813647
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-10 21:06:57 IST)" was missed by 0:29:09.406711
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 00:06:57 IST)" was missed by 0:22:25.241831
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 02:06:57 IST)" was missed by 0:09:25.295167
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 04:06:57 IST)" was missed by 0:21:56.288663
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 06:06:57 IST)" was missed by 0:14:59.930706
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 07:06:57 IST)" was missed by 0:00:19.799700
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 09:06:57 IST)" was missed by 0:38:29.543637
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 10:06:57 IST)" was missed by 0:08:02.954891
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 11:06:57 IST)" was missed by 0:49:49.733077
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 14:06:57 IST)" was missed by 0:58:11.609133
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 17:06:57 IST)" was missed by 0:04:27.731712
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 18:06:57 IST)" was missed by 0:11:03.887125
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-11 21:06:57 IST)" was missed by 0:07:35.254320
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 04:06:57 IST)" was missed by 0:47:41.774726
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 09:06:57 IST)" was missed by 0:37:40.269135
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 11:06:57 IST)" was missed by 0:08:59.966420
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 15:06:57 IST)" was missed by 0:45:03.854811
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 16:06:57 IST)" was missed by 0:49:28.879433
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-12 23:06:57 IST)" was missed by 0:28:44.100396
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 13:06:57 IST)" was missed by 0:06:12.747520
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 14:06:57 IST)" was missed by 0:48:34.195206
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 17:06:57 IST)" was missed by 0:44:55.814681
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 20:06:57 IST)" was missed by 0:04:55.842314
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 21:06:57 IST)" was missed by 0:03:51.223125
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 22:06:57 IST)" was missed by 0:31:10.938075
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-13 23:06:57 IST)" was missed by 0:14:39.404578
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-14 13:06:57 IST)" was missed by 0:43:53.470042
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-14 15:06:57 IST)" was missed by 0:36:04.606680
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-14 16:06:57 IST)" was missed by 0:28:43.182082
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-14 17:06:57 IST)" was missed by 0:07:12.324062
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 10:06:57 IST)" was missed by 0:05:41.098809
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 12:06:57 IST)" was missed by 0:54:27.841134
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.154:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 16:24:54 IST)" was missed by 0:30:40.332957
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 17:24:54 IST)" was missed by 0:00:02.544459
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 22:24:54 IST)" was missed by 0:16:57.451273
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-15 23:24:54 IST)" was missed by 0:10:38.008292
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 09:24:54 IST)" was missed by 0:05:19.027799
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 11:24:54 IST)" was missed by 0:21:40.126528
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 12:24:54 IST)" was missed by 0:24:36.392986
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 14:24:54 IST)" was missed by 0:23:14.502808
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 19:24:54 IST)" was missed by 0:14:38.182491
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 20:24:54 IST)" was missed by 0:02:21.787777
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-16 22:24:54 IST)" was missed by 0:52:54.833220
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-17 01:24:54 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-17 01:24:54 IST)" was missed by 0:44:37.901977
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-17 20:24:54 IST)" was missed by 0:01:11.822223
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-17 21:24:54 IST)" was missed by 0:09:12.345840
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-17 22:24:54 IST)" was missed by 0:41:14.519852
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-18 05:24:54 IST)" was missed by 0:10:07.682805
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-18 15:24:54 IST)" was missed by 0:19:11.233123
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-18 20:24:54 IST)" was missed by 0:49:04.995147
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-18 22:24:54 IST)" was missed by 0:27:28.696670
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-19 01:24:54 IST)" was missed by 0:49:02.785964
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-19 12:24:54 IST)" was missed by 0:53:23.093164
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-19 14:24:54 IST)" was missed by 0:07:19.447481
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-19 15:24:54 IST)" was missed by 0:55:50.577234
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-19 17:24:54 IST)" was missed by 0:01:31.374725
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 01:24:54 IST)" was missed by 0:31:48.230748
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 12:24:54 IST)" was missed by 0:49:01.086474
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 16:24:54 IST)" was missed by 0:19:29.613409
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 17:24:54 IST)" was missed by 0:19:07.613461
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 20:24:54 IST)" was missed by 0:58:16.769115
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-20 22:24:54 IST)" was missed by 0:45:19.227441
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 09:24:54 IST)" was missed by 0:20:15.457808
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 10:24:54 IST)" was missed by 0:03:14.961854
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 14:24:54 IST)" was missed by 0:55:09.712933
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 18:24:54 IST)" was missed by 0:14:26.298213
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 19:24:54 IST)" was missed by 0:19:27.824354
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 20:24:54 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-21 22:24:54 IST)" was missed by 0:35:38.290946
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 06:24:54 IST)" was missed by 0:53:01.578198
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 08:24:54 IST)" was missed by 0:20:06.937002
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 11:24:54 IST)" was missed by 0:33:19.065650
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 19:24:54 IST)" was missed by 0:30:50.709035
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.95:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 20:26:13 IST)" was missed by 0:00:01.095988
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-22 22:26:13 IST)" was missed by 0:40:36.747098
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-23 09:26:13 IST)" was missed by 0:23:41.862812
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-23 10:26:13 IST)" was missed by 0:26:12.368174
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-23 17:26:13 IST)" was missed by 0:36:35.135277
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-23 22:26:13 IST)" was missed by 0:27:51.274125
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 10:26:13 IST)" was missed by 0:51:31.983224
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 11:26:13 IST)" was missed by 0:12:14.771030
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 13:26:13 IST)" was missed by 0:22:57.499755
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 14:26:13 IST)" was missed by 0:33:43.612836
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 19:26:13 IST)" was missed by 0:49:33.860213
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-24 20:26:13 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-25 11:26:13 IST)" was missed by 0:56:34.464670
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-25 13:26:13 IST)" was missed by 0:39:42.759505
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-25 15:26:13 IST)" was missed by 0:07:44.448126
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.43:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-26 04:14:56 IST)" was missed by 0:40:07.323893
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-26 14:14:56 IST)" was missed by 0:20:17.666381
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-26 20:14:56 IST)" was missed by 0:02:09.511249
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-26 21:14:56 IST)" was missed by 0:19:45.830863
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-27 12:14:56 IST)" was missed by 0:49:01.084860
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-27 15:14:56 IST)" was missed by 0:36:08.012374
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-27 17:14:56 IST)" was missed by 0:05:21.129634
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-27 21:14:56 IST)" was missed by 0:55:31.105217
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 03:14:56 IST)" was missed by 0:18:38.150570
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 09:14:56 IST)" was missed by 0:49:21.341107
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 12:14:56 IST)" was missed by 0:25:09.327968
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 14:14:56 IST)" was missed by 0:47:05.697880
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 18:14:56 IST)" was missed by 0:32:41.456037
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 21:14:56 IST)" was missed by 0:10:45.616604
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-28 22:14:56 IST)" was missed by 0:16:57.768448
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 09:14:56 IST)" was missed by 0:12:34.544203
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 10:14:56 IST)" was missed by 0:59:18.991205
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 12:14:56 IST)" was missed by 0:45:16.555368
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 16:14:56 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 17:14:56 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 18:14:56 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 21:14:56 IST)" was missed by 0:12:55.694895
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-29 23:14:56 IST)" was missed by 0:09:04.867020
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.219:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-30 01:53:13 IST)" was missed by 0:53:58.333842
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-30 02:53:13 IST)" was missed by 0:58:55.795886
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-30 08:53:13 IST)" was missed by 0:52:10.997631
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-30 18:53:13 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.201:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-09-30 22:09:42 IST)" was missed by 0:45:40.909145
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 01:09:42 IST)" was missed by 0:02:39.244589
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 10:09:42 IST)" was missed by 0:21:44.310024
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 11:09:42 IST)" was missed by 0:19:01.961984
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 17:09:42 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 18:09:42 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 19:09:42 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 20:09:42 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-01 21:09:42 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-02 09:09:42 IST)" was missed by 0:28:09.457830
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-02 10:09:42 IST)" was missed by 0:25:10.709703
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.219:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 04:17:16 IST)" was missed by 0:40:49.979447
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 05:17:16 IST)" was missed by 0:15:33.212156
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 08:17:16 IST)" was missed by 0:02:25.395893
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 14:17:16 IST)" was missed by 0:49:26.200310
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 16:17:16 IST)" was missed by 0:46:57.754926
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 18:17:16 IST)" was missed by 0:28:44.870463
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-03 22:17:16 IST)" was missed by 0:37:13.221457
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-04 05:17:16 IST)" was missed by 0:16:44.234466
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-04 12:17:16 IST)" was missed by 0:22:47.129007
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-04 18:17:16 IST)" was missed by 0:09:35.625410
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-04 22:17:16 IST)" was missed by 0:33:18.747695
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.18.58:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 10:09:28 IST)" was missed by 0:44:25.691896
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 13:09:28 IST)" was missed by 0:15:04.319510
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 15:09:28 IST)" was missed by 0:28:21.666555
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 16:09:28 IST)" was missed by 0:03:09.553266
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 18:09:28 IST)" was missed by 0:06:12.572230
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 20:09:28 IST)" was missed by 0:38:43.073385
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-05 22:09:28 IST)" was missed by 0:49:39.919578
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.218:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-06 09:39:08 IST)" was missed by 0:04:10.707967
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-06 11:39:08 IST)" was missed by 0:08:56.881038
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-06 16:39:08 IST)" was missed by 0:40:48.087193
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-06 19:39:08 IST)" was missed by 0:08:52.598682
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-06 21:39:08 IST)" was missed by 0:50:32.607421
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.16.18.58:5000
+[33mPress CTRL+C to quit[0m
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-07 10:05:49 IST)" was missed by 0:09:17.155255
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-07 20:05:49 IST)" was missed by 0:19:28.176522
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-07 21:05:49 IST)" was missed by 0:08:02.250526
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-07 22:05:49 IST)" was missed by 0:35:57.721216
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 02:05:49 IST)" was missed by 0:28:18.800276
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 08:05:49 IST)" was missed by 0:29:44.333662
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 11:05:49 IST)" was missed by 0:03:37.591585
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 12:05:49 IST)" was missed by 0:03:01.367249
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 15:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 16:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 17:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 18:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 19:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 20:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 21:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-08 22:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 13:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 14:05:49 IST)" was missed by 0:24:19.400641
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 16:05:49 IST)" was missed by 0:33:57.397530
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 17:05:49 IST)" was missed by 0:24:07.920917
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 19:05:49 IST)" was missed by 0:07:36.365704
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 20:05:49 IST)" was missed by 0:27:27.195341
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-09 21:05:49 IST)" was missed by 0:58:51.940394
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-10 09:05:49 IST)" was missed by 0:02:16.635118
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-10 15:05:49 IST)" was missed by 0:24:13.444347
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-10 20:05:49 IST)" was missed by 0:42:15.756474
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-10 23:05:49 IST)" was missed by 0:30:56.347289
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-11 13:05:49 IST)" was missed by 0:58:10.958401
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-11 15:05:49 IST)" was missed by 0:41:58.842152
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-11 16:05:49 IST)" was missed by 0:00:10.958373
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-12 14:05:49 IST)" was missed by 0:23:46.274919
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-12 22:05:49 IST)" was missed by 0:28:41.942265
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-13 19:05:49 IST)" was missed by 0:11:58.913923
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-13 20:05:49 IST)" was missed by 0:31:46.363951
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-13 22:05:49 IST)" was missed by 0:02:39.252870
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 10:05:49 IST)" was missed by 0:00:42.810868
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 12:05:49 IST)" was missed by 0:24:46.255681
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 14:05:49 IST)" was missed by 0:10:28.822087
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 15:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 16:05:49 IST)" was missed by 0:56:11.935640
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-14 20:05:49 IST)" was missed by 0:23:21.630320
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 00:05:49 IST)" was missed by 0:39:13.754324
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 10:05:49 IST)" was missed by 0:21:47.124301
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 12:05:49 IST)" was missed by 0:41:06.659880
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 14:05:49 IST)" was missed by 0:18:30.595363
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 22:05:49 IST)" was missed by 0:06:08.670748
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-15 23:05:49 IST)" was missed by 0:12:22.858394
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-16 07:05:49 IST)" was missed by 0:33:47.915281
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-16 09:05:49 IST)" was missed by 0:15:30.695118
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-16 16:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    data = get_full_data()
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    row = nifty.iloc[-1]
+          ~~~~~~~~~~^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-17 10:05:49 IST)" was missed by 0:17:52.410539
+127.0.0.1 - - [17/Oct/2026 16:16:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 16:16:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Oct/2026 16:58:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 16:59:07] "GET / HTTP/1.1" 200 -
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+127.0.0.1 - - [17/Oct/2026 16:59:21] "GET /stocks HTTP/1.1" 200 -
+127.0.0.1 - - [17/Oct/2026 16:59:25] "GET /stocks HTTP/1.1" 200 -
+Run time of job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-19 15:05:49 IST)" was missed by 0:24:37.770806
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-19 16:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    print(f"\n[{datetime.now().strftime('%H:%M')}] Running scheduled signal check...")
+           ^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    nifty["ATR10"] = tr.rolling(10).mean()
+          ^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-19 17:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    print(f"\n[{datetime.now().strftime('%H:%M')}] Running scheduled signal check...")
+           ^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    nifty["ATR10"] = tr.rolling(10).mean()
+          ^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-19 20:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    print(f"\n[{datetime.now().strftime('%H:%M')}] Running scheduled signal check...")
+           ^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    nifty["ATR10"] = tr.rolling(10).mean()
+          ^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+$^NSEI: possibly delisted; no price data found  (period=6mo)
+
+1 Failed download:
+['^NSEI']: possibly delisted; no price data found  (period=6mo)
+Job "scheduled_check (trigger: interval[1:00:00], next run at: 2026-10-19 21:05:49 IST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/vihaanjain/personalproject/.venv/lib/python3.13/site-packages/apscheduler/executors/base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/vihaanjain/personalproject/app.py", line 537, in scheduled_check
+    print(f"\n[{datetime.now().strftime('%H:%M')}] Running scheduled signal check...")
+           ^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/app.py", line 430, in get_full_data
+    nifty["ATR10"] = tr.rolling(10).mean()
+          ^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1207, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1773, in _getitem_axis
+    self._validate_integer(key, axis)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/vihaanjain/personalproject/pandas/core/indexing.py", line 1706, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+[10:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22617.85
+
+[11:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22698.05
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22712.35
+
+[22:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22603.05
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22349.55
+
+[13:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22284.1
+
+[14:05] Running scheduled signal check...
+
+[15:05] Running scheduled signal check...
+
+[16:05] Running scheduled signal check...
+
+[17:05] Running scheduled signal check...
+
+[18:05] Running scheduled signal check...
+
+[19:05] Running scheduled signal check...
+
+[20:05] Running scheduled signal check...
+
+[21:05] Running scheduled signal check...
+
+[22:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[23:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[00:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[01:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[02:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[03:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[04:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[05:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[06:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[07:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[08:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[09:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22231.8
+
+[10:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22458.3
+
+[11:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22493.0
+
+[12:05] Running scheduled signal check...
+
+[21:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22520.45
+
+[22:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22520.45
+
+[15:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22520.45
+
+[16:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22520.45
+
+[13:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22520.45
+
+[22:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22363.35
+
+[20:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22721.95
+
+[14:05] Running scheduled signal check...
+
+[16:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22622.7
+
+[20:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22622.7
+
+[00:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22622.7
+
+[01:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22622.7
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22948.8
+
+[09:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22997.35
+
+[10:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23058.3
+
+[11:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23100.8
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23109.65
+
+[13:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23108.35
+
+[14:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23117.7
+
+[15:05] Running scheduled signal check...
+
+[16:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[17:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[18:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[10:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[11:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[13:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[14:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[15:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[16:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+============================================================
+STOCK SCANNER - 2026-10-17 16:59
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹2060.1 | PE: 101.83 | ROE: None% | Signal: 🟢 BUY
+  3M: ₹2761.77 (34.06%) | 6M: ₹3702.43 (79.72%)
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹551.5 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹699.55 (26.84%) | 6M: ₹887.35 (60.9%)
+Scanning NRB Bearings...
+
+============================================================
+STOCK SCANNER - 2026-10-17 16:59
+============================================================
+Scanning Laurus Labs...
+  Chart generated: True
+  Price: ₹2060.1 | PE: 101.83 | ROE: None% | Signal: 🟢 BUY
+  3M: ₹2761.77 (34.06%) | 6M: ₹3702.43 (79.72%)
+Scanning Tilaknagar Industries...
+  Chart generated: True
+  Price: ₹490.2 | PE: 32.23 | ROE: None% | Signal: 🟢 BUY
+  3M: ₹613.23 (25.1%) | 6M: ₹767.13 (56.49%)
+Scanning ICICI Bank...
+Error fetching ICICIBANK.NS: argument of type 'NoneType' is not iterable
+  Failed to fetch data
+Scanning APL Apollo...
+  Chart generated: True
+  Price: ₹551.5 | PE: None | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹699.55 (26.84%) | 6M: ₹887.35 (60.9%)
+Scanning NRB Bearings...
+  Chart generated: True
+  Price: ₹490.2 | PE: 32.23 | ROE: None% | Signal: 🟢 BUY
+  3M: ₹613.23 (25.1%) | 6M: ₹767.13 (56.49%)
+Scanning ICICI Bank...
+  Chart generated: True
+  Price: ₹2152.7 | PE: 48.07 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2604.54 (20.99%) | 6M: ₹3151.22 (46.38%)
+  Chart generated: True
+  Price: ₹1397.0 | PE: 18.06 | ROE: 16.07% | Signal: ⚪ HOLD
+  3M: ₹1352.58 (-3.18%) | 6M: ₹1309.57 (-6.26%)
+Scanning APL Apollo...
+  Chart generated: True
+  Price: ₹2152.7 | PE: 48.07 | ROE: None% | Signal: ⚪ HOLD
+  3M: ₹2604.54 (20.99%) | 6M: ₹3151.22 (46.38%)
+
+[17:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[18:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[19:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[20:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹23146.15
+
+[15:05] Running scheduled signal check...
+
+[16:05] Running scheduled signal check...
+
+[17:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[18:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[19:05] Running scheduled signal check...
+
+[20:05] Running scheduled signal check...
+
+[21:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[22:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[23:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[00:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[01:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[02:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[03:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[04:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[05:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[06:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[07:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[08:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[09:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[10:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[11:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95
+
+[12:05] Running scheduled signal check...
+Signal: ⚪ HOLD | Price: ₹22888.95/Users/vihaanjain/nifty-algo/run_app.sh: line 10:  1398 Terminated: 15          python /Users/vihaanjain/personalproject/app.py >> /Users/vihaanjain/nifty-algo/app.log 2>&1
+Scheduler started - checking signals every hour automatically
+Starting NIFTY Signal Dashboard...
+Open http://127.0.0.1:5000 in your browser
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.43:5000
+[33mPress CTRL+C to quit[0m
