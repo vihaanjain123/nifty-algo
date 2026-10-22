@@ -1,155 +1,161 @@
-# ============================================
-# NIFTY 50 Paper Trading Engine
-# Author: Vihaan Jain
-# Purpose: Simulates real trades based on
-#          algo signals without real money
-# ============================================
+"""
+Paper trader with position sizing based on signal strength.
+
+The algorithm gives every LONG/SHORT signal a strength score from 0 to 100.
+The paper trader then risks only part of its capital:
+
+    allocation = 20% + 60% x (strength / 100)      ->  between 20% and 80% of capital
+
+so a weak signal uses a small position, a strong signal uses a larger one, and
+the trader is never fully invested. Simulated costs of 0.03% per side are charged.
+
+Educational paper trading only - not financial advice.
+"""
 
 import json
 import os
+import threading
 from datetime import datetime
 
-TRADE_LOG_FILE = "paper_trades.json"
-STARTING_CAPITAL = 100000
+STARTING_CAPITAL = 100000.0
+MIN_ALLOC = 0.20          # allocation at strength 0
+MAX_ALLOC = 0.80          # allocation at strength 100
+COST_PER_SIDE = 0.0003    # 0.03% per side
 
-def load_trades():
-    if os.path.exists(TRADE_LOG_FILE):
-        with open(TRADE_LOG_FILE, "r") as f:
-            return json.load(f)
-    return {
-        "capital": STARTING_CAPITAL,
-        "position": None,
-        "trades": []
-    }
+TRADES_FILE = os.environ.get(
+    "PAPER_TRADES_PATH",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "paper_trades.json"),
+)
+_lock = threading.Lock()
 
-def save_trades(data):
-    with open(TRADE_LOG_FILE, "w") as f:
+
+def allocation_pct(strength):
+    """Percent of capital to use for a signal of this strength (0-100)."""
+    s = max(0, min(100, float(strength or 0)))
+    return round((MIN_ALLOC + (MAX_ALLOC - MIN_ALLOC) * s / 100) * 100, 1)
+
+
+def _fresh():
+    return {"starting_capital": STARTING_CAPITAL, "capital": STARTING_CAPITAL,
+            "position": None, "trade_history": []}
+
+
+def _load():
+    if not os.path.exists(TRADES_FILE):
+        return _fresh()
+    try:
+        with open(TRADES_FILE) as f:
+            data = json.load(f)
+        if all(k in data for k in ("starting_capital", "capital", "position", "trade_history")):
+            return data
+    except Exception:
+        pass
+    # Old or unreadable file: keep a backup and start fresh
+    backup = TRADES_FILE.replace(".json", "_old.json")
+    try:
+        os.replace(TRADES_FILE, backup)
+        print(f"Old paper-trading file moved to {backup}; starting a fresh portfolio.")
+    except Exception:
+        pass
+    return _fresh()
+
+
+def _save(data):
+    with open(TRADES_FILE, "w") as f:
         json.dump(data, f, indent=2)
 
-def execute_trade(signal, price):
-    data = load_trades()
-    capital = data["capital"]
-    position = data["position"]
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    # If we have an open position, check if we should close it
-    if position:
-        current_signal_direction = "LONG" if "BUY" in signal else "SHORT" if "SHORT" in signal else "HOLD"
-        position_direction = position["direction"]
+def _unrealised(position, price):
+    if not position:
+        return 0.0
+    if position["direction"] == "LONG":
+        return (price - position["entry_price"]) * position["units"]
+    return (position["entry_price"] - price) * position["units"]
 
-        # Close position if signal reversed or is HOLD
-        should_close = (
-            signal == "⚪ HOLD" or
-            (position_direction == "LONG" and "SHORT" in signal) or
-            (position_direction == "SHORT" and "BUY" in signal)
-        )
 
-        if should_close:
-            # Calculate P&L
-            entry_price = position["entry_price"]
-            units = position["units"]
+def _close(data, price, reason):
+    pos = data["position"]
+    gross = _unrealised(pos, price)
+    costs = pos["invested"] * COST_PER_SIDE * 2          # entry + exit
+    pnl = round(gross - costs, 2)
+    data["capital"] = round(data["capital"] + pnl, 2)
+    data["trade_history"].append({
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "type": "CLOSE", "direction": pos["direction"],
+        "entry_price": pos["entry_price"], "exit_price": round(price, 2),
+        "units": pos["units"], "invested": pos["invested"],
+        "strength": pos.get("strength"), "pnl": pnl, "reason": reason,
+    })
+    data["position"] = None
+    return pnl
 
-            if position_direction == "LONG":
-                pnl = round((price - entry_price) * units, 2)
-            else:
-                pnl = round((entry_price - price) * units, 2)
 
-            capital = round(capital + pnl, 2)
-            data["capital"] = capital
-
-            # Log the closed trade
-            closed_trade = {
-                "type": "CLOSE",
-                "direction": position_direction,
-                "entry_price": entry_price,
-                "exit_price": price,
-                "units": units,
-                "pnl": pnl,
-                "capital_after": capital,
-                "timestamp": timestamp
-            }
-            data["trades"].append(closed_trade)
-            data["position"] = None
-            position = None
-
-            print(f"[PAPER TRADE] CLOSED {position_direction} | Entry: {entry_price} | Exit: {price} | P&L: ₹{pnl} | Capital: ₹{capital}")
-
-    # Open new position if signal is actionable and no open position
-    if not position and signal != "⚪ HOLD":
-        direction = "LONG" if "BUY" in signal else "SHORT"
-        units = round(capital / price, 4)
-
-        new_position = {
-            "direction": direction,
-            "entry_price": price,
-            "units": units,
-            "entry_time": timestamp,
-            "entry_capital": capital
-        }
-
-        data["position"] = new_position
-        data["capital"] = 0  # capital is now in position
-
-        # Log the opened trade
-        opened_trade = {
-            "type": "OPEN",
-            "direction": direction,
-            "entry_price": price,
-            "units": units,
-            "timestamp": timestamp
-        }
-        data["trades"].append(opened_trade)
-
-        print(f"[PAPER TRADE] OPENED {direction} | Price: {price} | Units: {units} | Capital: ₹{capital}")
-
-    save_trades(data)
-    return data
-
-def get_portfolio_status(current_price):
-    data = load_trades()
-    position = data["position"]
-    capital = data["capital"]
-
-    if position:
-        entry_price = position["entry_price"]
-        units = position["units"]
-        direction = position["direction"]
-
-        if direction == "LONG":
-            unrealised_pnl = round((current_price - entry_price) * units, 2)
-        else:
-            unrealised_pnl = round((entry_price - current_price) * units, 2)
-
-        portfolio_value = round(capital + (units * current_price), 2) if direction == "LONG" else round(capital + position["entry_capital"] + unrealised_pnl, 2)
-    else:
-        unrealised_pnl = 0
-        portfolio_value = capital
-
-    total_pnl = round(portfolio_value - STARTING_CAPITAL, 2)
-    total_return = round((portfolio_value - STARTING_CAPITAL) / STARTING_CAPITAL * 100, 2)
-
-    # Calculate win rate from closed trades
-    closed_trades = [t for t in data["trades"] if t["type"] == "CLOSE"]
-    winning_trades = [t for t in closed_trades if t["pnl"] > 0]
-    win_rate = round(len(winning_trades) / len(closed_trades) * 100, 2) if closed_trades else 0
-
-    return {
-        "capital": capital,
-        "portfolio_value": portfolio_value,
-        "position": position,
-        "unrealised_pnl": unrealised_pnl,
-        "total_pnl": total_pnl,
-        "total_return": total_return,
-        "total_trades": len(closed_trades),
-        "win_rate": win_rate,
-        "trade_history": list(reversed(data["trades"]))
+def _open(data, direction, price, strength):
+    alloc = allocation_pct(strength) / 100
+    invested = round(data["capital"] * alloc, 2)
+    units = round(invested / price, 4)
+    data["position"] = {
+        "direction": direction, "entry_price": round(price, 2), "units": units,
+        "invested": invested, "strength": int(strength or 0),
+        "alloc_pct": round(alloc * 100, 1),
+        "time": datetime.now().strftime("%Y-%m-%d %H:%M"),
     }
+    data["trade_history"].append({
+        "timestamp": data["position"]["time"], "type": "OPEN", "direction": direction,
+        "entry_price": round(price, 2), "exit_price": None, "units": units,
+        "invested": invested, "strength": int(strength or 0), "pnl": None,
+    })
 
-if __name__ == "__main__":
-    # Test it
-    print("Testing paper trader...")
-    result = execute_trade("🟢 LONG BUY", 24000)
-    print(f"Position opened: {result['position']}")
-    status = get_portfolio_status(24200)
-    print(f"Unrealised P&L: ₹{status['unrealised_pnl']}")
-    print(f"Portfolio value: ₹{status['portfolio_value']}")
+
+def execute_trade(signal, price, strength=50):
+    """Act on a signal string such as '🟢 LONG BUY', '🔴 SHORT' or '⚪ HOLD'."""
+    with _lock:
+        data = _load()
+        pos = data["position"]
+        if "BUY" in signal:
+            want = "LONG"
+        elif "SHORT" in signal:
+            want = "SHORT"
+        else:
+            want = None
+
+        msg = "No action"
+        if want is None:
+            if pos:
+                pnl = _close(data, price, "SIGNAL")
+                msg = f"Closed {pos['direction']} at {price} | P&L Rs{pnl}"
+        elif pos and pos["direction"] == want:
+            msg = f"Already {want}, no change"
+        else:
+            if pos:
+                pnl = _close(data, price, "REVERSAL")
+                print(f"Closed {pos['direction']} at {price} | P&L Rs{pnl}")
+            _open(data, want, price, strength)
+            p = data["position"]
+            msg = (f"Opened {want} at {price} | strength {p['strength']}/100 | "
+                   f"allocation {p['alloc_pct']}% = Rs{p['invested']}")
+        _save(data)
+        print(msg)
+        return msg
+
+
+def get_portfolio_status(price):
+    with _lock:
+        data = _load()
+    pos = data["position"]
+    unrealised = round(_unrealised(pos, price), 2)
+    value = round(data["capital"] + unrealised, 2)
+    closed = [t for t in data["trade_history"] if t["type"] == "CLOSE"]
+    wins = [t for t in closed if t["pnl"] > 0]
+    total_pnl = round(value - data["starting_capital"], 2)
+    return {
+        "portfolio_value": value,
+        "total_pnl": total_pnl,
+        "total_return": round(total_pnl / data["starting_capital"] * 100, 2),
+        "win_rate": round(len(wins) / len(closed) * 100, 1) if closed else 0,
+        "closed_trades": len(closed),
+        "cash_capital": data["capital"],
+        "position": pos,
+        "unrealised_pnl": unrealised,
+        "trade_history": list(reversed(data["trade_history"])),
+    }

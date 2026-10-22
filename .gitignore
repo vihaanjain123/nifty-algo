@@ -1,0 +1,9 @@
+.venv/
+dist/
+build/
+__pycache__/
+*.pkl
+*.png
+paper_trades*.json
+app.log
+.DS_Store

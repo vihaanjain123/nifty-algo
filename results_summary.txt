@@ -1,0 +1,23 @@
+TRAINING
+  Period: 2025-01-21 to 2026-02-06
+  Final portfolio value: Rs101613.77
+  Total return: 1.61%
+  NIFTY buy-and-hold over same period: 10.08%
+  Max drawdown: -2.83%
+  Total trades: 7 (long 4, short 3)
+  Winning trades: 3   Losing trades: 4
+  Win rate: 42.86%
+  Average win: Rs1596.66   Average loss: Rs-794.05
+
+TESTING
+  Period: 2026-02-06 to 2026-10-21
+  Final portfolio value: Rs102310.71
+  Total return: 2.31%
+  NIFTY buy-and-hold over same period: -10.76%
+  Max drawdown: -6.43%
+  Total trades: 8 (long 0, short 8)
+  Winning trades: 4   Losing trades: 4
+  Win rate: 50.0%
+  Average win: Rs1766.45   Average loss: Rs-1188.78
+
+Settings: regime filter=True, cost per side=0.0003
