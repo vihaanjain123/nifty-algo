@@ -75,8 +75,7 @@ HTML_TEMPLATE = """
     </div>
 
     <div class="nav">
-        <a href="/">🇮🇳 NIFTY Dashboard</a>
-        <a href="/stocks">📊 Stock Scanner</a>
+        <a href="/"> NIFTY Dashboard</a>
     </div>
 
     <div class="price-box">₹{{ price }}</div>
